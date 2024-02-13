@@ -1,0 +1,12 @@
+Up to date
+[FuncDefn TypeInt "main" [] 
+    [Decls TypeInt [DeclArr "fib" (Num 20)],
+    Decls TypeInt [Decl "i"],
+
+    AssignArr "fib" (Num 0) (Num 0),
+    AssignArr "fib" (Num 1) (Num 1),
+    For (Assign "i" (Num 2)) (LessThan (Var "i") (Num 20)) (Assign "i" (Add (Var "i") (Num 1))) 
+        [AssignArr "fib" (Var "i") (Add (Arr "fib" (Sub (Var "i") (Num 1))) (Arr "fib" (Sub (Var "i") (Num 2))))],
+
+    For (Assign "i" (Num 0)) (LessThan (Var "i") (Num 20)) (Assign "i" (Add (Var "i") (Num 1))) 
+        [SpecialExp (CallFunc "print_int" [Arr "fib" (Var "i")])]]]

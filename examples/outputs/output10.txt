@@ -1,0 +1,38 @@
+Up to date
+[FuncDefn TypeInt "main" [] 
+    [Init TypeInt (Decl "x") (Num 10),
+    Init TypeInt (Decl "y") (Mod (Mul (Var "x") (Num 2)) (Num 15)),
+    Decls TypeInt [Decl "z"],
+    
+    IfElse (Xor (GreatThan (Var "x") (Var "y")) (Not (Equal (Var "x") (Var "y")))) 
+        [Assign "z" (Var "x")] 
+        [Assign "z" (Var "y")],
+    
+    Init TypeInt (Decl "sum") (Num 0),
+    For (Init TypeInt (Decl "i") (Num 1)) (LessEqThan (Var "i") (Num 10)) (Assign "i" (Add (Var "i") (Num 1))) 
+        [Assign "sum" (Add (Var "sum") (Var "i")),
+        IfElse (LessEqThan (Var "sum") (Num 60)) 
+            [Break] 
+            [Continue]],
+    
+    Init TypeInt (Decl "product") (Num 1),
+    Init TypeInt (Decl "j") (Num 5),
+    While (GreatThan (Var "j") (Num 0)) 
+        [Assign "product" (Mul (Var "product") (Var "j")),
+        Assign "j" (Sub (Var "j") (Num 1))],
+    
+    Decls TypeInt [DeclArr "numbers" (Num 5)],
+    For (Init TypeInt (Decl "i") (Num 0)) (LessThan (Var "i") (Num 5)) (Assign "i" (Add (Var "i") (Num 1))) 
+        [Assign "i" (Mul (Var "i") (Num 10)),
+        AssignArr "numbers" (Div (Var "i") (Num 10)) (Var "i"),
+        Assign "i" (Div (Var "i") (Num 10))],
+    
+    Decls TypeInt [DeclPt "ptr"],
+    Decls TypeInt [Decl "k"],
+    Assign "ptr" (RefArr "numbers" (Num 0)),
+    For (Assign "k" (Num 0)) (LessThan (Var "k") (Num 5)) (Assign "k" (Add (Var "k") (Num 1))) 
+        [SpecialExp (CallFunc "print_int" [Var "ptr"]),
+        AssignPtr "ptr" (Add (Var "x") (Mul (Var "k") (Ptr "ptr"))),
+        Assign "ptr" (Add (Var "ptr") (Num 1))],
+    
+    Return (Num 0)]]

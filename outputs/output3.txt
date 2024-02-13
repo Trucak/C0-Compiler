@@ -1,0 +1,8 @@
+Up to date
+[FuncDefn TypeInt "factorial" [ArgVar TypeInt "n"] 
+    [If (Equal (Var "n") (Num 0)) 
+        [Return (Num 1)],
+    Return (Mul (Var "n") (CallFunc "factorial" [Sub (Var "n") (Num 1)]))],
+
+FuncDefn TypeInt "main" [] 
+    [SpecialExp (CallFunc "print_int" [CallFunc "factorial" [CallFunc "scan_int" []]])]]

@@ -1,0 +1,10 @@
+// Program that contains an if-else without a condition
+
+int main() {
+    if () {
+        print_str("This shouldn't happen!");
+    } else {
+        print_str("This shouldn't happen either!");
+    }
+    return 0;
+}

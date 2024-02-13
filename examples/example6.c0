@@ -1,0 +1,14 @@
+// Program that demonstrates float types
+
+float circleArea(float pi, float radius) {
+    return pi*radius*radius;
+}
+
+int main() {
+    float pi = 3.14159;
+    float radius = 5.0;
+
+    print_float(circleArea(pi, radius));
+
+    return 0;
+}

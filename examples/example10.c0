@@ -1,0 +1,52 @@
+// C0 Program Demonstrating Most Language Features
+
+int main() {
+    int x = 10;
+    int y = 5;
+    int z;
+
+    // if-else statement
+    if ((x > y) ^ !(x == y)) {
+        z = x;
+    } else {
+        z = y;
+    }
+
+    // for loop
+    int sum = 0;
+    for (int i = 1; i <= 10; i++) {
+        sum += i;
+        if (sum <= 60)
+            break;
+        else
+            continue;
+    }
+
+    // while loop
+    int product = 1;
+    int j = 5;
+    while (j > 0) {
+        product = product * j;
+        j--;
+    }
+
+    // arrays
+    int numbers[5];
+    for (int i=0; i<5; i++) {
+        i *= 10;
+        numbers[i/10] = i;
+        i /= 10;
+    }
+    
+    // simple pointer usage
+    int* ptr;
+    int k;
+    ptr = &numbers[0]; // Point to the beginning of the array
+    for (k = 0; k < 5; k++) {
+        print_int(ptr); // Dereference the pointer to access array elements
+        *ptr = x + k**ptr;
+        ptr++; // Move the pointer to the next element
+    }
+
+    return 0;
+}

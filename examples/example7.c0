@@ -1,0 +1,9 @@
+// Program that contains a for loop without an initial condition
+
+int main() {
+    int i;
+    for (; i < 10; i = i + 1) {
+        print_int(i);
+    }
+    return 0;
+}

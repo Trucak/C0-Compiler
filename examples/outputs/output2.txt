@@ -1,0 +1,20 @@
+Up to date
+[FuncDefn TypeBool "is_prime" [ArgVar TypeInt "n"] 
+    [Decls TypeInt [Decl "d"],
+    Assign "d" (Num 2),
+    If (Equal (Var "n") (Num 1)) 
+        [Return (BoolValue False)],
+    While (LessThan (Var "d") (Var "n")) 
+        [IfElse (Equal (Mod (Var "n") (Var "d")) (Num 0)) 
+            [Return (BoolValue False)] 
+        [Assign "d" (Add (Var "d") (Num 1))]],
+    Return (BoolValue True)],
+
+FuncDefn TypeInt "main" [] 
+    [Decls TypeInt [Decl "n"],
+    Assign "n" (CallFunc "scan_int" []),
+    IfElse (CallFunc "is_prime" [Var "n"]) 
+        [SpecialExp (CallFunc "print_int" [Var "n"]),
+        SpecialExp (CallFunc "print_str" [String "\" is prime\""])] 
+    [SpecialExp (CallFunc "print_int" [Var "n"]),
+    SpecialExp (CallFunc "print_str" [String "\" is not prime\""])]]]

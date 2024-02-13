@@ -1,0 +1,9 @@
+Up to date
+[FuncDefn TypeInt "main" [] 
+    [Decls TypeInt [Decl "s",Decl "n"],
+    Assign "s" (Num 0),
+    Assign "n" (Num 1),
+    While (LessEqThan (Var "n") (Num 10)) 
+        [Assign "s" (Add (Var "s") (Mul (Var "n") (Var "n"))),
+        Assign "n" (Add (Var "n") (Num 1))],
+    SpecialExp (CallFunc "print_int" [Var "n"])]]

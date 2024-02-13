@@ -1,0 +1,25 @@
+bool is_prime(int n) {
+  int d;
+  d = 2;
+  if (n == 1)     // 1 is not prime
+     return false;
+  while (d < n) {
+     if (n%d == 0) 
+	   return false;
+	 else 
+	    d = d+1;
+  }
+  return true;
+}
+
+int main() {
+  int n;
+  n = scan_int(); 
+  if (is_prime(n)) {
+    print_int(n);
+    print_str(" is prime");
+  } else {
+    print_int(n);
+    print_str(" is not prime");
+   }		   
+}

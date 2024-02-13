@@ -1,0 +1,8 @@
+// Program that contains an empty and infinite while loop
+
+int main() {
+    while (1) {
+        
+    }
+    return 0;
+}

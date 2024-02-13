@@ -1,0 +1,11 @@
+Up to date
+[FuncDefn TypeFloat "circleArea" [ArgVar TypeFloat "pi",ArgVar TypeFloat "radius"] 
+    [Return (Mul (Mul (Var "pi") (Var "radius")) (Var "radius"))],
+    
+FuncDefn TypeInt "main" [] 
+    [Init TypeFloat (Decl "pi") (Real 3.14159),
+    Init TypeFloat (Decl "radius") (Real 5.0),
+    
+    SpecialExp (CallFunc "print_float" [CallFunc "circleArea" [Var "pi",Var "radius"]]),
+    
+    Return (Num 0)]]

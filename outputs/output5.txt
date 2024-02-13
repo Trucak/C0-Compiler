@@ -1,0 +1,19 @@
+Up to date
+[FuncDefn TypeInt "main" [] 
+    [Init TypeInt (Decl "a") (Num 5),
+    Init TypeInt (Decl "b") (Num 7),
+    Init TypeBool (Decl "aGreater") (BoolValue False),
+    Init TypeBool (Decl "bGreater") (BoolValue False),
+    Init TypeBool (Decl "isEven") (Equal (Mod (Var "a") (Num 2)) (Num 0)),
+    
+    IfElse (GreatThan (Var "a") (Var "b")) 
+        [Assign "aGreater" (BoolValue True),
+        SpecialExp (CallFunc "print_str" [String "\"a is greater.\""])] 
+        [Assign "bGreater" (BoolValue True),
+        SpecialExp (CallFunc "print_str" [String "\"b is greater.\""])],
+    
+    IfElse (Var "isEven") 
+        [SpecialExp (CallFunc "print_str" [String "\"Even\""])] 
+        [SpecialExp (CallFunc "print_str" [String "\"Odd\""])],
+        
+    Return (Num 0)]]

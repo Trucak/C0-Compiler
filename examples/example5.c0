@@ -1,0 +1,25 @@
+// Program that demonstrates the use of boolean types
+
+int main() {
+    int a = 5;  
+    int b = 7;  
+    bool aGreater = false;
+    bool bGreater = false;
+    bool isEven = (a % 2 == 0);
+
+    if (a > b) {
+        aGreater = true;
+        print_str("a is greater.");
+    } else {
+        bGreater = true;
+        print_str("b is greater.");
+    }
+
+    if (isEven) {
+        print_str("Even");
+    } else {
+        print_str("Odd");
+    }
+
+    return 0;
+}
